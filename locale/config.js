@@ -38,8 +38,8 @@ dayjs.locale({
     LLLL: 'dddd, D. MMMM YYYY HH:mm'
   },
   relativeTime: {
-    future: 'in %s',
-    past: 'vor %s',
+    future: 'în %s',
+    past: 'acum %s',
     s: relativeTimeFormatter,
     m: relativeTimeFormatter,
     mm: relativeTimeFormatter,
