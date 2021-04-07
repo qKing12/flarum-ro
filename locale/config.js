@@ -1,86 +1,55 @@
-//! moment.js locale configuration
-//! locale : Romanian [ro]
-//! author : Vlad Gurdiga : https://github.com/gurdiga
-//! author : Valentin Agachi : https://github.com/avaly
-//! author : Emanuel Cepoi : https://github.com/cepem
+const texts = {
+  s: 'o secundă',
+  m: 'un minut',
+  mm: '%d minute',
+  h: 'o oră',
+  hh: '%d ore',
+  d: 'o zi',
+  dd: '%d zile',
+  M: 'o lună',
+  MM: '%d luni',
+  y: 'un an',
+  yy: '%d ani'
+}
 
-;(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined'
-       && typeof require === 'function' ? factory(require('../moment')) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
-}(this, (function (moment) { 'use strict';
+function relativeTimeFormatter(number, withoutSuffix, key) {
+  let l = texts[key]
+  if (Array.isArray(l)) {
+    l = l[withoutSuffix ? 0 : 1]
+  }
+  return l.replace('%d', number)
+}
 
-    //! moment.js locale configuration
-
-    function relativeTimeWithPlural(number, withoutSuffix, key) {
-        var format = {
-                ss: 'secunde',
-                mm: 'minute',
-                hh: 'ore',
-                dd: 'zile',
-                ww: 'săptămâni',
-                MM: 'luni',
-                yy: 'ani',
-            },
-            separator = ' ';
-        if (number % 100 >= 20 || (number >= 100 && number % 100 === 0)) {
-            separator = ' de ';
-        }
-        return number + separator + format[key];
-    }
-
-    var ro = moment.defineLocale('ro', {
-        months: 'ianuarie_februarie_martie_aprilie_mai_iunie_iulie_august_septembrie_octombrie_noiembrie_decembrie'.split(
-            '_'
-        ),
-        monthsShort: 'ian._feb._mart._apr._mai_iun._iul._aug._sept._oct._nov._dec.'.split(
-            '_'
-        ),
-        monthsParseExact: true,
-        weekdays: 'duminică_luni_marți_miercuri_joi_vineri_sâmbătă'.split('_'),
-        weekdaysShort: 'Dum_Lun_Mar_Mie_Joi_Vin_Sâm'.split('_'),
-        weekdaysMin: 'Du_Lu_Ma_Mi_Jo_Vi_Sâ'.split('_'),
-        longDateFormat: {
-            LT: 'H:mm',
-            LTS: 'H:mm:ss',
-            L: 'DD.MM.YYYY',
-            LL: 'D MMMM YYYY',
-            LLL: 'D MMMM YYYY H:mm',
-            LLLL: 'dddd, D MMMM YYYY H:mm',
-        },
-        calendar: {
-            sameDay: '[azi la] LT',
-            nextDay: '[mâine la] LT',
-            nextWeek: 'dddd [la] LT',
-            lastDay: '[ieri la] LT',
-            lastWeek: '[fosta] dddd [la] LT',
-            sameElse: 'L',
-        },
-        relativeTime: {
-            future: 'peste %s',
-            past: '%s în urmă',
-            s: 'câteva secunde',
-            ss: relativeTimeWithPlural,
-            m: 'un minut',
-            mm: relativeTimeWithPlural,
-            h: 'o oră',
-            hh: relativeTimeWithPlural,
-            d: 'o zi',
-            dd: relativeTimeWithPlural,
-            w: 'o săptămână',
-            ww: relativeTimeWithPlural,
-            M: 'o lună',
-            MM: relativeTimeWithPlural,
-            y: 'un an',
-            yy: relativeTimeWithPlural,
-        },
-        week: {
-            dow: 1, // Monday is the first day of the week.
-            doy: 7, // The week that contains Jan 7th is the first week of the year.
-        },
-    });
-
-    return ro;
-
-})));
+dayjs.locale({
+  name: 'ro',
+  weekdays: 'Duminică_Luni_Marți_Miercuri_Joi_Vineri_Sâmbătă'.split('_'),
+  weekdaysShort: 'Du._Lu._Ma._Mi._Jo._Vi._Sâ.'.split('_'),
+  weekdaysMin: 'Du_Lu_Ma_Mi_Jo_Vi_Sâ'.split('_'),
+  months: 'Ianuarie_Februarie_Martie_Aprilie_Mai_Iunie_Iulie_August_Septembrie_Octombrie_Noiembrie_Decembrie'.split('_'),
+  monthsShort: 'Ian_Feb_Mar_Apr_Mai_Iun_Iul_Aug_Sept_Oct_Noi_Dec'.split('_'),
+  ordinal: n => `${n}.`,
+  weekStart: 1,
+  formats: {
+    LTS: 'HH:mm:ss',
+    LT: 'HH:mm',
+    L: 'DD.MM.YYYY',
+    LL: 'D. MMMM YYYY',
+    LLL: 'D. MMMM YYYY HH:mm',
+    LLLL: 'dddd, D. MMMM YYYY HH:mm'
+  },
+  relativeTime: {
+    future: 'in %s',
+    past: 'vor %s',
+    s: relativeTimeFormatter,
+    m: relativeTimeFormatter,
+    mm: relativeTimeFormatter,
+    h: relativeTimeFormatter,
+    hh: relativeTimeFormatter,
+    d: relativeTimeFormatter,
+    dd: relativeTimeFormatter,
+    M: relativeTimeFormatter,
+    MM: relativeTimeFormatter,
+    y: relativeTimeFormatter,
+    yy: relativeTimeFormatter
+  }
+})

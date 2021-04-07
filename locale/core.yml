@@ -410,7 +410,7 @@ core:
       notifications_heading: => core.ref.notifications
       notify_by_email_heading: => core.ref.email
       notify_by_web_heading: Web
-      notify_discussion_renamed_label: Cineva a redenumit o discuție începută de mine.
+      notify_discussion_renamed_label: Cineva a redenumit o discuție începută de mine
       privacy_disclose_online_label: Permit altor persoane să vadă când sunt online
       privacy_heading: Confidențialitate
       title: => core.ref.settings
@@ -619,7 +619,7 @@ core:
     notifications: Notificări
     okay: OK                                     # Referenced by flarum-tags.yml
     password: Parola
-    posts: Posturi                                 # Referenced by flarum-statistics.yml
+    posts: Postări                                # Referenced by flarum-statistics.yml
     previous_page: Pagina Anterioară
     remove: Șterge
     rename: Redenumește
