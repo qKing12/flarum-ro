@@ -1,0 +1,115 @@
+flarum-tags:
+
+  ##
+  # UNIQUE KEYS - The following keys are used in only one location each.
+  ##
+
+  # Translations in this namespace are used by the admin interface.
+  admin:
+
+    # These translations are used in the Basics page.
+    basics:
+      tags_label: => flarum-tags.ref.tags
+
+    # These translations are used in the Edit Tag modal dialog.
+    edit_tag:
+      color_label: => core.ref.color
+      delete_tag_button: Șterge eticheta
+      delete_tag_confirmation: "Sunteți sigur că doriți să ștergeți acestă etichetă? Eticheta discuției nu o sa fie eliminată."
+      description_label: Descriere
+      hide_label: Ascunde de toate discuțiile
+      icon_label: => core.ref.icon
+      icon_text: => core.ref.icon_text
+      name_label: => flarum-tags.ref.name
+      name_placeholder: => flarum-tags.ref.name
+      slug_label: Melc
+      submit_button: => core.ref.save_changes
+      title: Creează Tag
+
+    # These translations are used in the navigation bar.
+    nav:
+      tags_button: => flarum-tags.ref.tags
+      tags_text: Gestionați lista de etichete disponibile pentru a organiza discuții cu.
+
+    # These translations are used in the Permissions page of the admin interface.
+    permissions:
+      allow_edit_tags_label: Permite editarea etichetelor
+      restrict_by_tag_heading: Restricționează după etichetă
+      tag_discussions_label: Etichetele discuțiilor
+
+    # These translations are used in the Tag Settings modal dialog.
+    tag_settings:
+      range_separator_text: " la "
+      required_primary_heading: Numărul necesar de etichete principale
+      required_primary_text: Introduceți numărul minim și maxim de etichete principale care pot fi aplicate unei discuții.
+      required_secondary_heading: Numărul necesar de etichete secundare
+      required_secondary_text: Introduceți numărul minim și maxim de etichete secundare care pot fi aplicate unei discuții.
+      title: Setări etichete
+
+    # These translations are used in the Tags page.
+    tags:
+      about_tags_text: "Etichetele sunt folosite pentru a clasifica discuțiile. Etichetele principale sunt ca niște categorii tradiționale de forum: pot fi aranjate într-o ierarhie pe două niveluri. Etichetele secundare nu au ierarhie sau ordine și sunt utile pentru microcategorizare. "
+      create_primary_tag_button: Creați eticheta principală
+      create_secondary_tag_button: Creați etichetă secundară
+      primary_heading: Etichete principale
+      secondary_heading: Etichete secundare
+      settings_heading: Setări
+
+  # Translations in this namespace are used by the forum user interface.
+  forum:
+
+    # These translations are displayed on the page that lists all tags.
+    all_tags:
+      meta_description_text: Toate etichetele
+      meta_title_text: => flarum-tags.ref.tags
+
+    # These translations are used by the Choose Tags modal dialog.
+    choose_tags:
+      choose_primary_placeholder: "Alegeți o etichetă principală|Alegeți {count} etichete principale"
+      choose_secondary_placeholder: "Alegeți încă 1 etichetă|Alegeți {count} etichete"
+      edit_title: "Editați etichetele pentru {title}"
+      submit_button: => core.ref.okay
+      title: Alegeți etichete pentru discuția dvs.
+
+    # These translations are used by the composer when starting a discussion.
+    composer_discussion:
+      choose_tags_link: Alegeți etichete
+
+    # These translations are used by the discussion control buttons.
+    discussion_controls:
+      edit_tags_button: Editați etichete
+
+    header:
+      back_to_tags_tooltip: Înapoi la lista de etichete
+
+    # These translations are used on the index page, peripheral to the discussion list.
+    index:
+      more_link: Mai multe...
+      tags_link: => flarum-tags.ref.tags
+      untagged_link: Neetichetat
+
+    # These translations are displayed between posts in the post stream.
+    post_stream:
+      added_and_removed_tags_text: "{username} a adăugat {tagsAdded} și a eliminat {tagsRemoved}."
+      added_tags_text: "{username} a adăugat {tagsAdded}."
+      removed_tags_text: "{username} a eliminat {tagsRemoved}."
+      tags_text: "Eticheta {tags}|Etichetele {tags}"
+
+    # These translations are used when visiting a single tag's discussion list.
+    tag:
+      meta_description_text: "Toate discuțiile cu eticheta {tag}"
+
+  # Translations in this namespace are used by the forum and admin interfaces.
+  lib:
+
+    # This translation is displayed in place of the name of a tag that's been deleted.
+    deleted_tag_text: Șters
+
+  ##
+  # REUSED TRANSLATIONS - These keys should not be used directly in code!
+  ##
+
+  # Translations in this namespace are referenced by two or more unique keys.
+  ref:
+    name: Nume
+    tags: Etichete

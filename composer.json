@@ -1,0 +1,26 @@
+{
+    "name": "qking12/flarum-ro",
+    "type": "flarum-extension",
+    "description": "Romanian language pack.",
+    "keywords": ["locale"],
+    "license": "MIT",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        },
+        "flarum-extension": {
+            "title": "Română",
+            "category": "language",
+            "icon": {
+                "image": "icon.svg",
+                "backgroundColor": "#00247d",
+                "backgroundSize": "cover",
+                "backgroundPosition": "center"
+            }
+        },
+        "flarum-locale": {
+            "code": "ro",
+            "title": "Română"
+        }
+    }
+}
